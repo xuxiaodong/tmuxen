@@ -3,7 +3,7 @@
 # name     : tmuxen, tmux environment made easy
 # author   : Xu Xiaodong <xxdlhy@gmail.com>
 # created  : 2012 Jul 01
-# modified : 2012 Jul 01
+# modified : 2012 Jul 02
 #
 
 cmd=$(which tmux) # tmux path
@@ -14,7 +14,9 @@ if [ -z $cmd ]; then
   exit 1
 fi
 
-if [ ! $($cmd has -t $session) ]; then
+$cmd has -t $session
+
+if [ $? != 0 ]; then
   $cmd new -d -n vim -s $session "vim"
   $cmd splitw -v -p 20 -t $session "pry"
   $cmd neww -n mutt -t $session "mutt"
