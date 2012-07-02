@@ -8,7 +8,7 @@
 #
 
 bin=$HOME/bin
-cwd=$(dirname $0)
+cwd=$(pwd)
 
 if [ ! -d $bin ]; then
 	mkdir $bin
