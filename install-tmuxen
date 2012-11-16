@@ -4,7 +4,7 @@
 # author   : Xu Xiaodong <xxdlhy@gmail.com>
 # license  : GPL
 # created  : 2012 Jul 02
-# modified : 2012 Jul 10
+# modified : 2012 Nov 16
 #
 
 bin=$HOME/bin
@@ -15,7 +15,7 @@ if [ ! -d $bin ]; then
 fi
 
 echo "Installing tmuxen to $bin"
-cp $cwd/tmuxen $bin
+ln -sf $cwd/tmuxen $bin/tmuxen
 
 echo "Symlinking _tmux.conf to $HOME/.tmux.conf"
 ln -sf $cwd/_tmux.conf $HOME/.tmux.conf

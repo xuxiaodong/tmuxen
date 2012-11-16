@@ -4,7 +4,7 @@
 # author   : Xu Xiaodong <xxdlhy@gmail.com>
 # license  : GPL
 # created  : 2012 Jul 01
-# modified : 2012 Jul 02
+# modified : 2012 Nov 16
 #
 
 cmd=$(which tmux) # tmux path
@@ -15,11 +15,10 @@ if [ -z $cmd ]; then
   exit 1
 fi
 
-$cmd has -t $session
+$cmd has -t $session 2> /dev/null
 
 if [ $? != 0 ]; then
   $cmd new -d -n vim -s $session "vim"
-  $cmd splitw -v -p 20 -t $session "pry"
   $cmd neww -n mutt -t $session "mutt"
   $cmd neww -n irssi -t $session "irssi"
   $cmd neww -n cmus -t $session "cmus"
