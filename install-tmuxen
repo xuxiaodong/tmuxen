@@ -4,14 +4,14 @@
 # author   : Xu Xiaodong <xxdlhy@gmail.com>
 # license  : GPL
 # created  : 2012 Jul 02
-# modified : 2012 Nov 16
+# modified : 2013 Jul 06
 #
 
 bin=$HOME/bin
 cwd=$(pwd)
 
 if [ ! -d $bin ]; then
-  mkdir $bin
+    mkdir $bin
 fi
 
 echo "Installing tmuxen to $bin"
