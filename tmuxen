@@ -4,7 +4,7 @@
 # author   : Xu Xiaodong <xxdlhy@gmail.com>
 # license  : GPL
 # created  : 2012 Jul 01
-# modified : 2013 Jul 06
+# modified : 2015 May 09
 #
 
 cmd=$(which tmux)      # tmux path
@@ -19,12 +19,12 @@ $cmd has -t $session 2> /dev/null
 
 if [ $? != 0 ]; then
     $cmd new -d -n vim -s $session "vim"
-    #$cmd neww -n mutt -t $session "mutt"
-    $cmd neww -n irssi -t $session "irssi"
-    $cmd neww -n cmus -t $session "cmus"
+    $cmd neww -n ipy -t $session "ipython"
+    $cmd neww -n irc -t $session "irssi"
+    $cmd neww -n top -t $session "htop"
+    #$cmd splitw -v -p 98 -t $session "zsh"
     $cmd neww -n zsh -t $session "zsh"
-    #$cmd splitw -h -p 50 -t $session "zsh"
-    $cmd selectw -t $session:4
+    $cmd selectw -t $session:5
 fi
 
 $cmd att -t $session
