@@ -4,7 +4,7 @@
 # author   : Xu Xiaodong <xxdlhy@gmail.com>
 # license  : GPL
 # created  : 2012 Jul 01
-# modified : 2016 Jul 03
+# modified : 2016 Nov 12
 #
 
 cmd=$(which tmux)      # tmux path
@@ -19,9 +19,8 @@ $cmd has -t $session 2> /dev/null
 
 if [ $? -ne 0 ]; then
     $cmd new -d -n irc -s $session "irssi"
-    $cmd neww -n vim -t $session "nvim"
     $cmd neww -n zsh -t $session "zsh"
-    $cmd selectw -t $session:3
+    $cmd selectw -t $session:2
 fi
 
 $cmd att -t $session
